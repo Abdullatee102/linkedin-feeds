@@ -5,7 +5,7 @@ import { View, Image, Text, StyleSheet, TouchableOpacity } from 'react-native';
 export const Post = ({ profileImage, name, time, text, image }) => {
   const [expanded, setExpanded] = useState(false);
   const [liked, setLiked] = useState(false);
-  const [likeCount, setLikeCount] = useState(Math.floor(Math.random() * 100)); // Mock data
+  const [likeCount, setLikeCount] = useState(Math.floor(Math.random() * 100)); 
 
   const toggleExpanded = () => setExpanded(!expanded);
   const toggleLike = () => {
