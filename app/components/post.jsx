@@ -13,12 +13,12 @@ export const Post = ({ profileImage, name, time, text, image }) => {
     setLikeCount(prev => liked ? prev - 1 : prev + 1);
   };
 
-  // FIX: Properly handle local 'require' vs web 'uri'
+  // handles both local and remote images;
   const postImageSource = typeof image === 'number' ? image : (image?.uri ? { uri: image.uri } : null);
 
   return (
     <View style={styles.postContainer}>
-      {/* Header */}
+
       <View style={styles.postHeader}>
         <Image source={{ uri: profileImage }} style={styles.profileImage} />
         <View>
@@ -27,7 +27,7 @@ export const Post = ({ profileImage, name, time, text, image }) => {
         </View>
       </View>
 
-      {/* Content */}
+
       <Text style={styles.postContent}>
         {expanded ? text : text.length > 70 ? text.substring(0, 70) + '...' : text}
       </Text>
@@ -38,7 +38,7 @@ export const Post = ({ profileImage, name, time, text, image }) => {
         </TouchableOpacity>
       )}
 
-      {/* Post Image */}
+
       {image && (
         <Image 
           source={postImageSource} 
@@ -47,14 +47,14 @@ export const Post = ({ profileImage, name, time, text, image }) => {
         />
       )}
 
-      {/* Engagement Stats */}
+
       <View style={styles.statsRow}>
         <Text style={styles.statsText}>{likeCount} Likes</Text>
       </View>
 
       <View style={styles.divider} />
 
-      {/* Action Buttons */}
+
       <View style={styles.actionRow}>
         <TouchableOpacity onPress={toggleLike} style={styles.actionButton}>
           <Text style={[styles.actionText, liked && { color: '#007bff' }]}>
