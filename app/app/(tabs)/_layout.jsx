@@ -1,35 +1,36 @@
+
 import { Tabs } from 'expo-router';
-import React from 'react';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+const TabsLayout = () => {
+  
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
+        tabBarActiveTintColor: '#0a66c2',
+        tabBarInactiveTintColor: '#888',
+        tabBarStyle: { paddingBottom: 5, height: 60  },
       }}>
-      <Tabs.Screen
-        name="index"
+
+      <Tabs.Screen name="home" 
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+          title: 'home',
+          tabBarIcon: () => <FontAwesome name="home" size={24} color="black" />
+        }}/>
+
+      <Tabs.Screen name="settings"
+        options={{ 
+          title: 'settings',
+          color: "black",
+          tabBarIcon: () => <MaterialCommunityIcons name="post" size={24} color="black" />
+        }} />
+
+      <Tabs.Screen name="profile"/>
+
     </Tabs>
   );
 }
+
+export default TabsLayout;

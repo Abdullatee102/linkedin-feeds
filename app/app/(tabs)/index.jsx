@@ -4,6 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ViewMore } from '../../components/viewmore';
 import { Post } from '../../components/post';
 import { Img } from '../../components/images';
+import { router } from 'expo-router';
+
 
 
 const posts = [
@@ -95,7 +97,6 @@ export default function LinkedInPage() {
   };
 
   const hasMorePosts = visibleCount < posts.length;
-
   return (
     <SafeAreaView style={styles.container}>
       <Text style={{fontSize: 20, fontWeight: 'bold', padding: 15, backgroundColor: '#fff', color:'rgb(101, 101, 238)',}}>LinkedIn Feeds</Text>
@@ -121,6 +122,8 @@ export default function LinkedInPage() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollViewContent}
       />
+
+      
     </SafeAreaView>
   );
 }
