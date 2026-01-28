@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FlatList, StyleSheet, Text, Pressable} from 'react-native';
+import { FlatList, StyleSheet, Text, View, Pressable} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ViewMore } from '../components/viewmore';
 import { Post } from '../components/post';
@@ -124,7 +124,7 @@ export default function LinkedInPage() {
       />
 
       <Pressable onPress ={() => {router.push('../home')}} 
-        style={{ padding: 15, backgroundColor: 'rgb(101, 101, 238)', margin: 15, borderRadius: 8 }}>
+        style={{ padding: 10, backgroundColor: 'rgb(101, 101, 238)', margin: 30, borderRadius: 8 }}>
         <Text style={{ color: 'white', fontSize: 16, textAlign: 'center' }}> Go to Home</Text>
       </Pressable>
     </SafeAreaView>

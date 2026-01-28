@@ -1,8 +1,9 @@
 
 import { Tabs } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import Entypo from '@expo/vector-icons/Entypo';
 
 const TabsLayout = () => {
   
@@ -10,15 +11,14 @@ const TabsLayout = () => {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: '#1b83eb',
-        tabBarInactiveTintColor: '#d69c9c',
+        tabBarInactiveTintColor: '#00f',
+        tabBarActiveTintColor: '#fff',
         tabBarStyle: { 
-          backgroundColor: 'darkblue',
-          borderTopColor: 'transparent',
+          backgroundColor: '#000',
           height: 70,
           marginBottom: 20,
           marginHorizontal: 30,
-          borderRadius: 44,
+          borderRadius: 80,
          },
         tabBarIconStyle: { marginTop: 10}
       }}>
@@ -29,16 +29,22 @@ const TabsLayout = () => {
           tabBarIcon: ({color}) => <FontAwesome name="home" size={24} color={color} />
         }}/>
 
-      <Tabs.Screen name="settings"
+      <Tabs.Screen name="mynetwork"
         options={{ 
-          title: 'settings',
-          tabBarIcon: ({color}) => <MaterialCommunityIcons name="post" size={24} color={color} />
+          title: 'my network',
+          tabBarIcon: ({color}) => <Entypo name="network" size={24} color={color} />
         }} />
 
-      <Tabs.Screen name="profile"
+      <Tabs.Screen name="notifications"
         options={{
-          title: 'profile',
-          tabBarIcon: ({color}) => <AntDesign name="user" size={24} color={color} />
+          title: 'notifications',
+          tabBarIcon: ({color}) => <Ionicons name="notifications" size={24} color={color} />
+        }} />
+
+      <Tabs.Screen name="jobs"
+        options={{
+          title: 'jobs',
+          tabBarIcon: ({color}) => <AntDesign name="inbox" size={24} color={color} />
         }} />
 
     </Tabs>

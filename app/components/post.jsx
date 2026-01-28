@@ -1,7 +1,5 @@
 
 import React, { useState } from 'react';
-import EvilIcons from '@expo/vector-icons/EvilIcons';
-import AntDesign from '@expo/vector-icons/AntDesign';
 import { View, Image, Text, StyleSheet, TouchableOpacity, Pressable} from 'react-native';
 
 export const Post = ({ profileImage, name, time, text, image }) => {
