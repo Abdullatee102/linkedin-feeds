@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
-import { View, Image, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import EvilIcons from '@expo/vector-icons/EvilIcons';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import { View, Image, Text, StyleSheet, TouchableOpacity, Pressable} from 'react-native';
 
 export const Post = ({ profileImage, name, time, text, image }) => {
   const [expanded, setExpanded] = useState(false);
@@ -58,7 +60,7 @@ export const Post = ({ profileImage, name, time, text, image }) => {
       <View style={styles.actionRow}>
         <TouchableOpacity onPress={toggleLike} style={styles.actionButton}>
           <Text style={[styles.actionText, liked && { color: '#007bff' }]}>
-            {liked ? '❤️ Liked' : '🤍 Like'}
+            {liked ? '👍 Liked' : '🤍 Like'}
           </Text>
         </TouchableOpacity>
         
@@ -67,7 +69,11 @@ export const Post = ({ profileImage, name, time, text, image }) => {
         </TouchableOpacity>
         
         <TouchableOpacity style={styles.actionButton}>
-          <Text style={styles.actionText}>↗️ Share</Text>
+          <Text style={styles.actionText}> 🔄 Repost </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.actionButton}>
+          <Text style={styles.actionText}>↗️ Send</Text>
         </TouchableOpacity>
       </View>
     </View>

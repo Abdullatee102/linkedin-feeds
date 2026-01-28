@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { FlatList, StyleSheet, Text} from 'react-native';
+import { FlatList, StyleSheet, Text, Pressable} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ViewMore } from '../../components/viewmore';
-import { Post } from '../../components/post';
-import { Img } from '../../components/images';
+import { ViewMore } from '../components/viewmore';
+import { Post } from '../components/post';
+import { Img } from '../components/images';
 import { router } from 'expo-router';
 
 
@@ -15,7 +15,7 @@ const posts = [
     name: "Daniel Afolabi",
     timestamp: "2h ago",
     content: "Just finished a great workout session! Feeling energized and ready to take on the day.",
-    image: require('../../assets/images/image1.jpg'),
+    image: require('../assets/images/image1.jpg'),
   },
   {
     id: '2',
@@ -23,7 +23,7 @@ const posts = [
     name: "Abdullateef Opeyemi",
     timestamp: "1h ago",
     content: "Excited to announce that I've started a new position at TechCrush! Looking forward to this new chapter as it brings to my growth and learning experience in my tech journey.",
-    image: require('../../assets/images/myscholarship.jpg')
+    image: require('../assets/images/myscholarship.jpg')
   },
   {
     id: '3',
@@ -31,7 +31,7 @@ const posts = [
     name: "Mike Johnson",
     timestamp: "5h ago",
     content: "Had an amazing time at the conference today. Met so many inspiring people!",
-    image: require('../../assets/images/image2.jpg'),
+    image: require('../assets/images/image2.jpg'),
   },
   {
     id: '4',
@@ -61,7 +61,7 @@ const posts = [
     name: "David Lee",
     timestamp: "12h ago",
     content: "Just completed a marathon! Feeling accomplished and proud.",
-    image: require('../../assets/images/image4.jpg'),
+    image: require('../assets/images/image4.jpg'),
  
   },
   {
@@ -84,7 +84,7 @@ const posts = [
     name: "William Davies",
     timestamp: "18h ago",
     content: "Had a fantastic time volunteering at the local shelter today. Giving back feels great!",
-    image: require('../../assets/images/image6.jpg'),
+    image: require('../assets/images/image6.jpg'),
 
   },
 ];
@@ -123,7 +123,10 @@ export default function LinkedInPage() {
         contentContainerStyle={styles.scrollViewContent}
       />
 
-      
+      <Pressable onPress ={() => {router.push('../home')}} 
+        style={{ padding: 15, backgroundColor: 'rgb(101, 101, 238)', margin: 15, borderRadius: 8 }}>
+        <Text style={{ color: 'white', fontSize: 16, textAlign: 'center' }}> Go to Home</Text>
+      </Pressable>
     </SafeAreaView>
   );
 }
