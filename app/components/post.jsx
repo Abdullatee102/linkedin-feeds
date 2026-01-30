@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { View, Image, Text, StyleSheet, TouchableOpacity, Pressable} from 'react-native';
+import { View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 export const Post = ({ profileImage, name, time, text, image }) => {
   const [expanded, setExpanded] = useState(false);
