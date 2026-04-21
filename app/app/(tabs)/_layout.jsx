@@ -19,7 +19,7 @@ const TabsLayout = () => {
           marginBottom: 20,
           marginHorizontal: 30,
           borderRadius: 80,
-         },
+        },
         tabBarIconStyle: { marginTop: 10}
       }}>
 

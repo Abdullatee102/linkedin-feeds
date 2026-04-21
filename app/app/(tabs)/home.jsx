@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import { FlatList, StyleSheet, Text, View, Pressable} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -128,8 +127,8 @@ const HomePage = () => {
         contentContainerStyle={styles.scrollViewContent}
       />
 
-      <Pressable onPress ={() => {router.push('../(home)/options')}} >
-          <Text style={{ padding: 10, backgroundColor: 'rgb(101, 101, 238)', margin: 20, borderRadius: 8, color: 'white', fontSize: 16, textAlign: 'center' }}> Go to Options</Text>
+      <Pressable onPress ={() => {router.push('../onboarding')}} >
+          <Text style={{ padding: 10, backgroundColor: 'rgb(101, 101, 238)', margin: 20, borderRadius: 8, color: 'white', fontSize: 16, textAlign: 'center' }}> Go to Onboarding</Text>
       </Pressable>
     </SafeAreaView>
   );

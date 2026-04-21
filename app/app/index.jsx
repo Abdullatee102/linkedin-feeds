@@ -26,7 +26,7 @@ export default function LinkedInPageLogin() {
         <Text style={{ fontSize: 16, fontWeight: 'bold', marginVertical: 10 }}> Login</Text>
         <Text style={{ fontSize: 14, color: 'blue', marginVertical: 10 }}> Forget Password?</Text>
 
-        <Pressable onPress ={() => {router.push('../(tabs)/home')}} 
+        <Pressable onPress ={() => {router.push('./onboarding')}} 
         style={{ padding: 10, backgroundColor: 'rgb(101, 101, 238)', margin: 30, borderRadius: 8 }}>
           <Text style={{ color: 'white', fontSize: 16, textAlign: 'center' }}> Go to Home</Text>
         </Pressable>
